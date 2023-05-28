@@ -4,6 +4,7 @@ import { HiOutlineMenu } from "react-icons/hi";
 
 const Navbar = () => {
   const [mobileScreen, setMobileScreen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     function handleMobileScreen() {
@@ -26,20 +27,28 @@ const Navbar = () => {
     { label: "Contact Us", path: "/" },
   ];
 
+  const toggleMenu = () => {
+    setOpenMenu(true);
+  };
+
   return (
     <div>
       <header className="w-full bg-sky-500 flex items-center justify-between p-4 text-white">
         <SiReact className="text-4xl text-sky-900" />
         {mobileScreen ? (
           <nav>
-            <ul className="flex gap-1 text-xl items-center cursor-pointer">
-              {navItems.map((item, index) => (
-                <li key={index} className="py-1 px-7">
-                  {item.label}
-                </li>
-              ))}
-              <li className="bg-sky-800 py-1 px-7 rounded-md">Sign Up</li>
-            </ul>
+            {openMenu ? (
+              <ul className="flex gap-1 text-xl items-center cursor-pointer">
+                {navItems.map((item, index) => (
+                  <li key={index} className="py-1 px-7">
+                    {item.label}
+                  </li>
+                ))}
+                <li className="bg-sky-800 py-1 px-7 rounded-md">Sign Up</li>
+              </ul>
+            ) : (
+              <button>click</button>
+            )}
           </nav>
         ) : (
           <nav>
