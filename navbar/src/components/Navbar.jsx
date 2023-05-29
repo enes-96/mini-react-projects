@@ -8,7 +8,7 @@ const Navbar = () => {
 
   useEffect(() => {
     function handleMobileScreen() {
-      setMobileScreen(window.innerWidth >= 768);
+      setMobileScreen(window.innerWidth <= 768);
     }
 
     handleMobileScreen();
@@ -28,32 +28,46 @@ const Navbar = () => {
   ];
 
   const toggleMenu = () => {
-    setOpenMenu(true);
+    setOpenMenu(!openMenu);
   };
 
   return (
     <div>
-      <header className="w-full bg-sky-500 flex items-center justify-between p-4 text-white">
-        <SiReact className="text-4xl text-sky-900" />
+      <header
+        className={`w-full bg-sky-500 items-center justify-between p-4 text-white ${
+          openMenu ? "flex-col h-screen " : "flex"
+        }`}
+      >
+        <SiReact
+          className={`text-4xl text-sky-900 ${openMenu ? "hidden" : "block"}`}
+        />
+
         {mobileScreen ? (
-          <nav>
+          <nav className="h-full">
             {openMenu ? (
-              <ul className="flex gap-1 text-xl items-center cursor-pointer">
+              <ul className="flex h-full p-4  text-xl items-center cursor-pointer flex-col justify-between">
+                <SiReact className="text-4xl text-sky-900" />
                 {navItems.map((item, index) => (
                   <li key={index} className="py-1 px-7">
                     {item.label}
                   </li>
                 ))}
                 <li className="bg-sky-800 py-1 px-7 rounded-md">Sign Up</li>
+                <HiOutlineMenu onClick={toggleMenu} className="text-3xl" />
               </ul>
             ) : (
-              <button>click</button>
+              <HiOutlineMenu onClick={toggleMenu} className="text-3xl" />
             )}
           </nav>
         ) : (
-          <nav>
-            <HiOutlineMenu className="text-3xl cursor-pointer" />
-          </nav>
+          <ul className="flex gap-1 text-xl items-center cursor-pointer">
+            {navItems.map((item, index) => (
+              <li key={index} className="py-1 px-7">
+                {item.label}
+              </li>
+            ))}
+            <li className="bg-sky-800 py-1 px-7 rounded-md">Sign Up</li>
+          </ul>
         )}
       </header>
     </div>
