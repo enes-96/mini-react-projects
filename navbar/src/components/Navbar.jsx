@@ -11,14 +11,21 @@ const Navbar = () => {
       setMobileScreen(window.innerWidth <= 768);
     }
 
+    function handleResize() {
+      handleMobileScreen();
+      if (mobileScreen && openMenu) {
+        setOpenMenu(false);
+      }
+    }
+
     handleMobileScreen();
 
-    window.addEventListener("resize", handleMobileScreen);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleMobileScreen);
+      window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [openMenu]);
 
   const navItems = [
     { label: "Home", path: "/" },
@@ -45,7 +52,7 @@ const Navbar = () => {
         {mobileScreen ? (
           <nav className="h-full">
             {openMenu ? (
-              <ul className="flex h-full p-4  text-xl items-center cursor-pointer flex-col justify-between">
+              <ul className="flex h-full p-4 text-xl items-center cursor-pointer flex-col justify-between">
                 <SiReact className="text-4xl text-sky-900" />
                 {navItems.map((item, index) => (
                   <li key={index} className="py-1 px-7">
