@@ -6,14 +6,11 @@ const App = () => {
   const [result, setResult] = useState("");
 
   const handleButtonClick = (value) => {
-    if (
-      typeof value === "number" ||
-      (typeof value === "string" && !isNaN(parseInt(value)))
-    ) {
+    if (typeof value === "number") {
       setResult(result.concat(value));
     } else {
       const lastChar = result.slice(-1);
-      if (["+", "-", "*", "/"].includes(lastChar)) {
+      if (["+", "-", "*", "/", "."].includes(lastChar)) {
         setResult(result.slice(0, -1).concat(value));
       } else {
         setResult(result.concat(value));
@@ -25,21 +22,28 @@ const App = () => {
 
   const handleClear = () => setResult("");
 
-  const buttonValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "+", "-", "*", "/"];
+  const buttonValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "+", "-", "*", "/", "."];
 
   return (
-    <div className="w-1/3 border-2">
-      <Screen value={result} />
-      <div className="border-2 grid grid-cols-3">
-        {buttonValues.map((value, i) => (
+    <div className="grid place-items-center text-4xl">
+      <div className="border-2 ">
+        <Screen value={result} />
+        <div className="grid grid-cols-3 text-2xl ">
+          {buttonValues.map((value, i) => (
+            <Button
+              className={"border-2 h-32"}
+              key={i}
+              value={value}
+              onClick={() => handleButtonClick(value)}
+            />
+          ))}
           <Button
-            key={i}
-            value={value}
-            onClick={() => handleButtonClick(value)}
+            value="="
+            className={"border-2 h-32 col-span-2"}
+            onClick={handleCalculate}
           />
-        ))}
-        <Button value="=" onClick={handleCalculate} />
-        <Button value="C" onClick={handleClear} />
+          <Button value="C" className={"border-2 h-32"} onClick={handleClear} />
+        </div>
       </div>
     </div>
   );
