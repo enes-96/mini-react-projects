@@ -5,16 +5,16 @@ import logo from "/home/enes10/Desktop/mini-react-projects/responsive-website/sr
 const Navbar = () => {
   return (
     <nav className="">
-      <div className=" max-w-screen-2xl mx-auto px-2">
+      <div className=" max-w-screen-2xl mx-auto px-6">
         <div className="flex items-center justify-between py-4 ">
           <div className="">
             <Link to="/" className="text-white font-bold text-xl">
               <img src={logo} className=" h-16" />
             </Link>
           </div>
-          <div className="hidden md:block ">
-            <div className="flex gap-24 items-center ">
-              <div className="flex items-center gap-7">
+          <div className="hidden md:block">
+            <div className="flex gap-32 items-center ">
+              <div className="flex items-center gap-12">
                 <Link
                   to="/"
                   className="transition-all duration-300 text-gray-300 hover:text-red-200 font-medium text-lg"
@@ -40,7 +40,7 @@ const Navbar = () => {
                   Contact
                 </Link>
               </div>
-              <div className="flex items-center gap-7">
+              <div className="flex items-center gap-12">
                 <Link
                   to="/login"
                   className="transition-all duration-300 text-gray-300 hover:text-red-200 font-medium text-lg"

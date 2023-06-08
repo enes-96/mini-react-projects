@@ -11,9 +11,9 @@ import Navbar from "./components/common/Navbar";
 const App = () => {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-black text-gray-200">
+      <div className="flex flex-col min-h-screen bg-black text-gray-200 ">
         <Navbar />
-        <main className="flex-grow">
+        <main className="max-w-screen-2xl m-auto border-2">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/pricing" element={<PricingPage />} />
