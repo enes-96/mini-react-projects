@@ -8,13 +8,13 @@ const FeatureCard = ({ feature, columnClass }) => {
   const { icon, title, description } = feature;
 
   return (
-    <div className=" grid grid-cols-2 p-8 my-10 place-items-center gap-4 text-neutral-300 ">
+    <div className=" grid grid-cols-2 p-10 my-10 place-items-center text-black bg-white rounded-2xl">
       <div className={` row-span-3 ${columnClass}`}>
         <h3 className="text-2xl font-bold my-6">{title}</h3>
-        <p className="text-xl leading-relaxed ">{description}</p>
+        <p className="text-lg leading-relaxed ">{description}</p>
       </div>
       <div className="">
-        <img src={icon} alt={title} className=" h-64 row-span-2 " />
+        <img src={icon} alt={title} className=" h-60 row-span-2 " />
       </div>
     </div>
   );
