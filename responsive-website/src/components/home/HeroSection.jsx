@@ -19,7 +19,7 @@ const HeroSection = () => {
     <section className="max-w-screen-2xl m-auto">
       <h1
         id="hero-header"
-        className="text-9xl text-center font-bold tracking-wide text-neutral-800  my-8"
+        className="text-9xl text-center font-bold tracking-wide text-white  my-8"
       >
         Anonymize Your <br /> Digital Footprints.
       </h1>
@@ -31,7 +31,7 @@ const HeroSection = () => {
       <div className="w-full flex justify-center ">
         <Link
           to="/signup"
-          className="bg-red-700 py-2 px-6 rounded-md flex items-center w-fit gap-3 "
+          className="bg-red-700 py-2 px-6 rounded-md flex items-center w-fit gap-3 hover:bg-red-800 transition-all duration-300"
         >
           <Button className={"text-2xl "}>Try LynxNet</Button>
           <svg
@@ -53,7 +53,7 @@ const HeroSection = () => {
       <p className="text-center mt-5 text-sm text-neutral-500 mb-10">
         30-DAY MONEY BACK GUARANTEE
       </p>
-      <div className="w-full h-32 my-12 flex items-center justify-between border-t-2 border-b-2 border-neutral-800 p-20">
+      <div className="w-full h-32 my-12 flex items-center justify-between border-t-2 border-b-2 border-white p-20">
         <SiBmw className="text-8xl text-neutral-700" />
         <SiSteam className="text-8xl text-neutral-700" />
         <SiSpotify className="text-8xl text-neutral-700" />

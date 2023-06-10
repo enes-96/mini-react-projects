@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "/home/enes10/Desktop/mini-react-projects/responsive-website/src/assets/images/LynxNet.png";
+import logo from "../../assets/images/LynxNet.png";
 
 const Navbar = () => {
   return (
