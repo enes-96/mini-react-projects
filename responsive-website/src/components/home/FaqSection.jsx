@@ -2,8 +2,10 @@ import React from "react";
 
 const FaqSection = () => {
   return (
-    <div>
-      <h1>hello from faq</h1>
+    <div className=" max-w-screen-2xl mx-auto my-10  ">
+      <div className="border-2 ">
+        <h3 className="text-center text-5xl ">Most Asked</h3>
+      </div>
     </div>
   );
 };
