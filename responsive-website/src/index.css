@@ -5,3 +5,10 @@
 body {
   font-family: "Nunito", sans-serif;
 }
+
+#heroIpohneBg {
+  background-image: url(/src/assets/images/ipohne.png);
+  background-color: red;
+  background-position: center;
+  background-attachment: fixed;
+}

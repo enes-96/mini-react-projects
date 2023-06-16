@@ -6,7 +6,7 @@ import FaqSection from "../home/FaqSection";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="border-2 ">
       <HeroSection />
       <HeroFeatures />
       <TestimonialSection />
