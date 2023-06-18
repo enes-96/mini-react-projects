@@ -3,10 +3,10 @@ import ipohneImg from "../../assets/images/ipohne.png";
 
 const HeroSection = () => {
   return (
-    <div className="">
-      <div className="bg-gray-300 grid grid-cols-2 ">
+    <div className="border-2 border-green-400">
+      <div className="flex">
         <div>
-          <h1>left</h1>
+          <h1>Unleash Online Freedom with Lynx</h1>
         </div>
         <div id="heroIpohneBg" className="">
           <h1>ipone</h1>
