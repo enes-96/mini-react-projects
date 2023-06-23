@@ -5,3 +5,10 @@
 body {
   font-family: "Nunito", sans-serif;
 }
+#phoneFrame {
+  height: 560px;
+  width: 280px;
+  background: url("./assets/images/ipohne.png");
+  background-position: center;
+  background-size: cover;
+}
